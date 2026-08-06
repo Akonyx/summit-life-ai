@@ -181,6 +181,7 @@ function Dashboard() {
                   stroke="var(--color-chart-1)"
                   strokeWidth={2.5}
                   fill="url(#moodFill)"
+                  isAnimationActive={false}
                 />
               </AreaChart>
             </ResponsiveContainer>
@@ -194,7 +195,7 @@ function Dashboard() {
               <BarChart data={studyData}>
                 <XAxis dataKey="day" tickLine={false} axisLine={false} fontSize={11} />
                 <Tooltip cursor={false} />
-                <Bar dataKey="hrs" radius={6} fill="var(--color-chart-3)" />
+                <Bar dataKey="hrs" radius={6} fill="var(--color-chart-3)" isAnimationActive={false} />
               </BarChart>
             </ResponsiveContainer>
           </div>
