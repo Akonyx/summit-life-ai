@@ -169,8 +169,8 @@ function Dashboard() {
               <AreaChart data={moodData}>
                 <defs>
                   <linearGradient id="moodFill" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="var(--color-chart-1)" stopOpacity={0.6} />
-                    <stop offset="100%" stopColor="var(--color-chart-1)" stopOpacity={0} />
+                    <stop offset="0%" stopColor="oklch(0.62 0.22 293)" stopOpacity={0.6} />
+                    <stop offset="100%" stopColor="oklch(0.62 0.22 293)" stopOpacity={0} />
                   </linearGradient>
                 </defs>
                 <XAxis dataKey="day" tickLine={false} axisLine={false} fontSize={11} />
@@ -178,7 +178,7 @@ function Dashboard() {
                 <Area
                   type="monotone"
                   dataKey="mood"
-                  stroke="var(--color-chart-1)"
+                  stroke="oklch(0.62 0.22 293)"
                   strokeWidth={2.5}
                   fill="url(#moodFill)"
                   isAnimationActive={false}
@@ -195,7 +195,7 @@ function Dashboard() {
               <BarChart data={studyData}>
                 <XAxis dataKey="day" tickLine={false} axisLine={false} fontSize={11} />
                 <Tooltip cursor={false} />
-                <Bar dataKey="hrs" radius={6} fill="var(--color-chart-3)" isAnimationActive={false} />
+                <Bar dataKey="hrs" radius={6} fill="oklch(0.7 0.13 195)" isAnimationActive={false} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -290,7 +290,7 @@ function Ring({ label, value, sub }: { label: string; value: number; sub: string
       <div
         className="grid h-20 w-20 place-items-center rounded-full"
         style={{
-          background: `conic-gradient(var(--color-chart-1) ${value * 3.6}deg, var(--color-muted) 0deg)`,
+          background: `conic-gradient(oklch(0.62 0.22 293) ${value * 3.6}deg, var(--color-muted) 0deg)`,
         }}
       >
         <div className="grid h-15 w-15 place-items-center rounded-full bg-background text-sm font-bold">
