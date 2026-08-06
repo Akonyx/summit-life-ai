@@ -12,12 +12,16 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AssistantRouteImport } from './routes/assistant'
 import { Route as CalendarRouteImport } from './routes/calendar'
+import { Route as DocumentsRouteImport } from './routes/documents'
 import { Route as FinanceRouteImport } from './routes/finance'
 import { Route as FitnessRouteImport } from './routes/fitness'
 import { Route as GoalsRouteImport } from './routes/goals'
 import { Route as HabitsRouteImport } from './routes/habits'
 import { Route as HealthRouteImport } from './routes/health'
 import { Route as JournalRouteImport } from './routes/journal'
+import { Route as NotificationsRouteImport } from './routes/notifications'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as StudyRouteImport } from './routes/study'
 import { Route as TasksRouteImport } from './routes/tasks'
 import { Route as TravelRouteImport } from './routes/travel'
@@ -38,6 +42,11 @@ const AssistantRoute = AssistantRouteImport.update({
 const CalendarRoute = CalendarRouteImport.update({
   id: '/calendar',
   path: '/calendar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocumentsRoute = DocumentsRouteImport.update({
+  id: '/documents',
+  path: '/documents',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FinanceRoute = FinanceRouteImport.update({
@@ -68,6 +77,21 @@ const HealthRoute = HealthRouteImport.update({
 const JournalRoute = JournalRouteImport.update({
   id: '/journal',
   path: '/journal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotificationsRoute = NotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
   getParentRoute: () => rootRouteImport,
 } as any)
 const StudyRoute = StudyRouteImport.update({
@@ -105,12 +129,16 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/assistant': typeof AssistantRoute
   '/calendar': typeof CalendarRoute
+  '/documents': typeof DocumentsRoute
   '/finance': typeof FinanceRoute
   '/fitness': typeof FitnessRoute
   '/goals': typeof GoalsRoute
   '/habits': typeof HabitsRoute
   '/health': typeof HealthRoute
   '/journal': typeof JournalRoute
+  '/notifications': typeof NotificationsRoute
+  '/profile': typeof ProfileRoute
+  '/settings': typeof SettingsRoute
   '/study': typeof StudyRoute
   '/tasks': typeof TasksRoute
   '/travel': typeof TravelRoute
@@ -122,12 +150,16 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/assistant': typeof AssistantRoute
   '/calendar': typeof CalendarRoute
+  '/documents': typeof DocumentsRoute
   '/finance': typeof FinanceRoute
   '/fitness': typeof FitnessRoute
   '/goals': typeof GoalsRoute
   '/habits': typeof HabitsRoute
   '/health': typeof HealthRoute
   '/journal': typeof JournalRoute
+  '/notifications': typeof NotificationsRoute
+  '/profile': typeof ProfileRoute
+  '/settings': typeof SettingsRoute
   '/study': typeof StudyRoute
   '/tasks': typeof TasksRoute
   '/travel': typeof TravelRoute
@@ -140,12 +172,16 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/assistant': typeof AssistantRoute
   '/calendar': typeof CalendarRoute
+  '/documents': typeof DocumentsRoute
   '/finance': typeof FinanceRoute
   '/fitness': typeof FitnessRoute
   '/goals': typeof GoalsRoute
   '/habits': typeof HabitsRoute
   '/health': typeof HealthRoute
   '/journal': typeof JournalRoute
+  '/notifications': typeof NotificationsRoute
+  '/profile': typeof ProfileRoute
+  '/settings': typeof SettingsRoute
   '/study': typeof StudyRoute
   '/tasks': typeof TasksRoute
   '/travel': typeof TravelRoute
@@ -159,12 +195,16 @@ export interface FileRouteTypes {
     | '/'
     | '/assistant'
     | '/calendar'
+    | '/documents'
     | '/finance'
     | '/fitness'
     | '/goals'
     | '/habits'
     | '/health'
     | '/journal'
+    | '/notifications'
+    | '/profile'
+    | '/settings'
     | '/study'
     | '/tasks'
     | '/travel'
@@ -176,12 +216,16 @@ export interface FileRouteTypes {
     | '/'
     | '/assistant'
     | '/calendar'
+    | '/documents'
     | '/finance'
     | '/fitness'
     | '/goals'
     | '/habits'
     | '/health'
     | '/journal'
+    | '/notifications'
+    | '/profile'
+    | '/settings'
     | '/study'
     | '/tasks'
     | '/travel'
@@ -193,12 +237,16 @@ export interface FileRouteTypes {
     | '/'
     | '/assistant'
     | '/calendar'
+    | '/documents'
     | '/finance'
     | '/fitness'
     | '/goals'
     | '/habits'
     | '/health'
     | '/journal'
+    | '/notifications'
+    | '/profile'
+    | '/settings'
     | '/study'
     | '/tasks'
     | '/travel'
@@ -211,12 +259,16 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AssistantRoute: typeof AssistantRoute
   CalendarRoute: typeof CalendarRoute
+  DocumentsRoute: typeof DocumentsRoute
   FinanceRoute: typeof FinanceRoute
   FitnessRoute: typeof FitnessRoute
   GoalsRoute: typeof GoalsRoute
   HabitsRoute: typeof HabitsRoute
   HealthRoute: typeof HealthRoute
   JournalRoute: typeof JournalRoute
+  NotificationsRoute: typeof NotificationsRoute
+  ProfileRoute: typeof ProfileRoute
+  SettingsRoute: typeof SettingsRoute
   StudyRoute: typeof StudyRoute
   TasksRoute: typeof TasksRoute
   TravelRoute: typeof TravelRoute
@@ -246,6 +298,13 @@ declare module '@tanstack/react-router' {
       path: '/calendar'
       fullPath: '/calendar'
       preLoaderRoute: typeof CalendarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/documents': {
+      id: '/documents'
+      path: '/documents'
+      fullPath: '/documents'
+      preLoaderRoute: typeof DocumentsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/finance': {
@@ -288,6 +347,27 @@ declare module '@tanstack/react-router' {
       path: '/journal'
       fullPath: '/journal'
       preLoaderRoute: typeof JournalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notifications': {
+      id: '/notifications'
+      path: '/notifications'
+      fullPath: '/notifications'
+      preLoaderRoute: typeof NotificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/study': {
@@ -339,12 +419,16 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AssistantRoute: AssistantRoute,
   CalendarRoute: CalendarRoute,
+  DocumentsRoute: DocumentsRoute,
   FinanceRoute: FinanceRoute,
   FitnessRoute: FitnessRoute,
   GoalsRoute: GoalsRoute,
   HabitsRoute: HabitsRoute,
   HealthRoute: HealthRoute,
   JournalRoute: JournalRoute,
+  NotificationsRoute: NotificationsRoute,
+  ProfileRoute: ProfileRoute,
+  SettingsRoute: SettingsRoute,
   StudyRoute: StudyRoute,
   TasksRoute: TasksRoute,
   TravelRoute: TravelRoute,
@@ -355,3 +439,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
