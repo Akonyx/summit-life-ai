@@ -13,10 +13,16 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AssistantRouteImport } from './routes/assistant'
 import { Route as CalendarRouteImport } from './routes/calendar'
 import { Route as FinanceRouteImport } from './routes/finance'
+import { Route as FitnessRouteImport } from './routes/fitness'
 import { Route as GoalsRouteImport } from './routes/goals'
 import { Route as HabitsRouteImport } from './routes/habits'
+import { Route as HealthRouteImport } from './routes/health'
+import { Route as JournalRouteImport } from './routes/journal'
 import { Route as StudyRouteImport } from './routes/study'
 import { Route as TasksRouteImport } from './routes/tasks'
+import { Route as TravelRouteImport } from './routes/travel'
+import { Route as VisionBoardRouteImport } from './routes/vision-board'
+import { Route as WellnessRouteImport } from './routes/wellness'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 
 const IndexRoute = IndexRouteImport.update({
@@ -39,6 +45,11 @@ const FinanceRoute = FinanceRouteImport.update({
   path: '/finance',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FitnessRoute = FitnessRouteImport.update({
+  id: '/fitness',
+  path: '/fitness',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GoalsRoute = GoalsRouteImport.update({
   id: '/goals',
   path: '/goals',
@@ -49,6 +60,16 @@ const HabitsRoute = HabitsRouteImport.update({
   path: '/habits',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HealthRoute = HealthRouteImport.update({
+  id: '/health',
+  path: '/health',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JournalRoute = JournalRouteImport.update({
+  id: '/journal',
+  path: '/journal',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const StudyRoute = StudyRouteImport.update({
   id: '/study',
   path: '/study',
@@ -57,6 +78,21 @@ const StudyRoute = StudyRouteImport.update({
 const TasksRoute = TasksRouteImport.update({
   id: '/tasks',
   path: '/tasks',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TravelRoute = TravelRouteImport.update({
+  id: '/travel',
+  path: '/travel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VisionBoardRoute = VisionBoardRouteImport.update({
+  id: '/vision-board',
+  path: '/vision-board',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WellnessRoute = WellnessRouteImport.update({
+  id: '/wellness',
+  path: '/wellness',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiChatRoute = ApiChatRouteImport.update({
@@ -70,10 +106,16 @@ export interface FileRoutesByFullPath {
   '/assistant': typeof AssistantRoute
   '/calendar': typeof CalendarRoute
   '/finance': typeof FinanceRoute
+  '/fitness': typeof FitnessRoute
   '/goals': typeof GoalsRoute
   '/habits': typeof HabitsRoute
+  '/health': typeof HealthRoute
+  '/journal': typeof JournalRoute
   '/study': typeof StudyRoute
   '/tasks': typeof TasksRoute
+  '/travel': typeof TravelRoute
+  '/vision-board': typeof VisionBoardRoute
+  '/wellness': typeof WellnessRoute
   '/api/chat': typeof ApiChatRoute
 }
 export interface FileRoutesByTo {
@@ -81,10 +123,16 @@ export interface FileRoutesByTo {
   '/assistant': typeof AssistantRoute
   '/calendar': typeof CalendarRoute
   '/finance': typeof FinanceRoute
+  '/fitness': typeof FitnessRoute
   '/goals': typeof GoalsRoute
   '/habits': typeof HabitsRoute
+  '/health': typeof HealthRoute
+  '/journal': typeof JournalRoute
   '/study': typeof StudyRoute
   '/tasks': typeof TasksRoute
+  '/travel': typeof TravelRoute
+  '/vision-board': typeof VisionBoardRoute
+  '/wellness': typeof WellnessRoute
   '/api/chat': typeof ApiChatRoute
 }
 export interface FileRoutesById {
@@ -93,10 +141,16 @@ export interface FileRoutesById {
   '/assistant': typeof AssistantRoute
   '/calendar': typeof CalendarRoute
   '/finance': typeof FinanceRoute
+  '/fitness': typeof FitnessRoute
   '/goals': typeof GoalsRoute
   '/habits': typeof HabitsRoute
+  '/health': typeof HealthRoute
+  '/journal': typeof JournalRoute
   '/study': typeof StudyRoute
   '/tasks': typeof TasksRoute
+  '/travel': typeof TravelRoute
+  '/vision-board': typeof VisionBoardRoute
+  '/wellness': typeof WellnessRoute
   '/api/chat': typeof ApiChatRoute
 }
 export interface FileRouteTypes {
@@ -106,10 +160,16 @@ export interface FileRouteTypes {
     | '/assistant'
     | '/calendar'
     | '/finance'
+    | '/fitness'
     | '/goals'
     | '/habits'
+    | '/health'
+    | '/journal'
     | '/study'
     | '/tasks'
+    | '/travel'
+    | '/vision-board'
+    | '/wellness'
     | '/api/chat'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -117,10 +177,16 @@ export interface FileRouteTypes {
     | '/assistant'
     | '/calendar'
     | '/finance'
+    | '/fitness'
     | '/goals'
     | '/habits'
+    | '/health'
+    | '/journal'
     | '/study'
     | '/tasks'
+    | '/travel'
+    | '/vision-board'
+    | '/wellness'
     | '/api/chat'
   id:
     | '__root__'
@@ -128,10 +194,16 @@ export interface FileRouteTypes {
     | '/assistant'
     | '/calendar'
     | '/finance'
+    | '/fitness'
     | '/goals'
     | '/habits'
+    | '/health'
+    | '/journal'
     | '/study'
     | '/tasks'
+    | '/travel'
+    | '/vision-board'
+    | '/wellness'
     | '/api/chat'
   fileRoutesById: FileRoutesById
 }
@@ -140,10 +212,16 @@ export interface RootRouteChildren {
   AssistantRoute: typeof AssistantRoute
   CalendarRoute: typeof CalendarRoute
   FinanceRoute: typeof FinanceRoute
+  FitnessRoute: typeof FitnessRoute
   GoalsRoute: typeof GoalsRoute
   HabitsRoute: typeof HabitsRoute
+  HealthRoute: typeof HealthRoute
+  JournalRoute: typeof JournalRoute
   StudyRoute: typeof StudyRoute
   TasksRoute: typeof TasksRoute
+  TravelRoute: typeof TravelRoute
+  VisionBoardRoute: typeof VisionBoardRoute
+  WellnessRoute: typeof WellnessRoute
   ApiChatRoute: typeof ApiChatRoute
 }
 
@@ -177,6 +255,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FinanceRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/fitness': {
+      id: '/fitness'
+      path: '/fitness'
+      fullPath: '/fitness'
+      preLoaderRoute: typeof FitnessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/goals': {
       id: '/goals'
       path: '/goals'
@@ -191,6 +276,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HabitsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/health': {
+      id: '/health'
+      path: '/health'
+      fullPath: '/health'
+      preLoaderRoute: typeof HealthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/journal': {
+      id: '/journal'
+      path: '/journal'
+      fullPath: '/journal'
+      preLoaderRoute: typeof JournalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/study': {
       id: '/study'
       path: '/study'
@@ -203,6 +302,27 @@ declare module '@tanstack/react-router' {
       path: '/tasks'
       fullPath: '/tasks'
       preLoaderRoute: typeof TasksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/travel': {
+      id: '/travel'
+      path: '/travel'
+      fullPath: '/travel'
+      preLoaderRoute: typeof TravelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/vision-board': {
+      id: '/vision-board'
+      path: '/vision-board'
+      fullPath: '/vision-board'
+      preLoaderRoute: typeof VisionBoardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/wellness': {
+      id: '/wellness'
+      path: '/wellness'
+      fullPath: '/wellness'
+      preLoaderRoute: typeof WellnessRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/chat': {
@@ -220,10 +340,16 @@ const rootRouteChildren: RootRouteChildren = {
   AssistantRoute: AssistantRoute,
   CalendarRoute: CalendarRoute,
   FinanceRoute: FinanceRoute,
+  FitnessRoute: FitnessRoute,
   GoalsRoute: GoalsRoute,
   HabitsRoute: HabitsRoute,
+  HealthRoute: HealthRoute,
+  JournalRoute: JournalRoute,
   StudyRoute: StudyRoute,
   TasksRoute: TasksRoute,
+  TravelRoute: TravelRoute,
+  VisionBoardRoute: VisionBoardRoute,
+  WellnessRoute: WellnessRoute,
   ApiChatRoute: ApiChatRoute,
 }
 export const routeTree = rootRouteImport
