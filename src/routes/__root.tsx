@@ -82,14 +82,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "LifeHub AI — Personal Growth & Life Management" },
+      {
+        name: "description",
+        content:
+          "LifeHub AI brings goals, habits, tasks, money, health, study and journaling into one intelligent workspace.",
+      },
+      { name: "author", content: "LifeHub AI" },
+      { property: "og:site_name", content: "LifeHub AI" },
+      { property: "og:title", content: "LifeHub AI — Personal Growth & Life Management" },
+      {
+        property: "og:description",
+        content:
+          "One elegant workspace for goals, habits, tasks, finance, health, study and reflection — with an AI assistant built in.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {

@@ -41,13 +41,13 @@ function VisionBoard() {
             className={`${t.tone} ${t.span} group relative overflow-hidden rounded-2xl p-5 text-white shadow-lg transition-transform duration-300 hover:-translate-y-1`}
           >
             <t.icon className="h-6 w-6 opacity-90" />
-            <p className="mt-3 text-lg font-bold">{t.title}</p>
+            <h2 className="mt-3 text-lg font-bold">{t.title}</h2>
             <p className="text-sm opacity-85">{t.note}</p>
           </div>
         ))}
         <GlassCard className="grid place-items-center text-center sm:col-span-2">
           <div>
-            <p className="text-sm font-semibold">Add your own</p>
+            <h2 className="text-sm font-semibold">Add your own</h2>
             <p className="text-xs text-muted-foreground">Drag images anywhere on the board</p>
           </div>
         </GlassCard>

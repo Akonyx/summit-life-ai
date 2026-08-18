@@ -22,6 +22,7 @@ import { Route as JournalRouteImport } from './routes/journal'
 import { Route as NotificationsRouteImport } from './routes/notifications'
 import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as StudyRouteImport } from './routes/study'
 import { Route as TasksRouteImport } from './routes/tasks'
 import { Route as TravelRouteImport } from './routes/travel'
@@ -94,6 +95,11 @@ const SettingsRoute = SettingsRouteImport.update({
   path: '/settings',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const StudyRoute = StudyRouteImport.update({
   id: '/study',
   path: '/study',
@@ -139,6 +145,7 @@ export interface FileRoutesByFullPath {
   '/notifications': typeof NotificationsRoute
   '/profile': typeof ProfileRoute
   '/settings': typeof SettingsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/study': typeof StudyRoute
   '/tasks': typeof TasksRoute
   '/travel': typeof TravelRoute
@@ -160,6 +167,7 @@ export interface FileRoutesByTo {
   '/notifications': typeof NotificationsRoute
   '/profile': typeof ProfileRoute
   '/settings': typeof SettingsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/study': typeof StudyRoute
   '/tasks': typeof TasksRoute
   '/travel': typeof TravelRoute
@@ -182,6 +190,7 @@ export interface FileRoutesById {
   '/notifications': typeof NotificationsRoute
   '/profile': typeof ProfileRoute
   '/settings': typeof SettingsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/study': typeof StudyRoute
   '/tasks': typeof TasksRoute
   '/travel': typeof TravelRoute
@@ -205,6 +214,7 @@ export interface FileRouteTypes {
     | '/notifications'
     | '/profile'
     | '/settings'
+    | '/sitemap.xml'
     | '/study'
     | '/tasks'
     | '/travel'
@@ -226,6 +236,7 @@ export interface FileRouteTypes {
     | '/notifications'
     | '/profile'
     | '/settings'
+    | '/sitemap.xml'
     | '/study'
     | '/tasks'
     | '/travel'
@@ -247,6 +258,7 @@ export interface FileRouteTypes {
     | '/notifications'
     | '/profile'
     | '/settings'
+    | '/sitemap.xml'
     | '/study'
     | '/tasks'
     | '/travel'
@@ -269,6 +281,7 @@ export interface RootRouteChildren {
   NotificationsRoute: typeof NotificationsRoute
   ProfileRoute: typeof ProfileRoute
   SettingsRoute: typeof SettingsRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StudyRoute: typeof StudyRoute
   TasksRoute: typeof TasksRoute
   TravelRoute: typeof TravelRoute
@@ -370,6 +383,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SettingsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/study': {
       id: '/study'
       path: '/study'
@@ -429,6 +449,7 @@ const rootRouteChildren: RootRouteChildren = {
   NotificationsRoute: NotificationsRoute,
   ProfileRoute: ProfileRoute,
   SettingsRoute: SettingsRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   StudyRoute: StudyRoute,
   TasksRoute: TasksRoute,
   TravelRoute: TravelRoute,
@@ -439,3 +460,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
