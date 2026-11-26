@@ -1,6 +1,6 @@
 # Life Hub AI
 
-So LifeHub AI is something that could actually become a real startup one day. I am aiming for 90%+, let's design it like a real premium product instead of just another AI chatbot.
+So LifeHub AI is something that could actually become a real startup one day. I am aiming for a top-rier project. Let's design it like a real premium product instead of just another AI chatbot.
 
 Project Title
 
