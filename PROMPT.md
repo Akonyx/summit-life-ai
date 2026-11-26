@@ -6,7 +6,7 @@ Project Title
 
 LifeHub AI – Your Intelligent Life Management Assistant
 
-Prompt
+Prompt:
 
 Build a modern, premium-quality AI-powered web application called LifeHub AI.
 
