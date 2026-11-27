@@ -7,13 +7,13 @@ Summit Life AI is an app for the next generation, dreamers, and builders in Sout
 Work. School. Money. Focus. Mindset. All in one place.
 
 ### ✨ What it does
-- Helps you stay focused on your goals
-- Helps you plan your money
-- Helps you build better habits
-- Helps you climb to your summit, one step at a time
+- 🎯Helps you stay focused on your goals 
+- 💸Helps you plan your money
+- 🧘🏾‍♀️Helps you build better habits
+- 🏔Helps you climb to your summit, one step at a time
 
 ### 🚀 Our Mission
-To help young South Africans rise, build, and win — no matter where they start.
+To help young South Africans — and beyond — rise, build, and win — no matter where they start.
 
 ### 💛 Support Us
 Love this project? Support us here:
