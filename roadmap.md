@@ -1,0 +1,5 @@
+- [ ] Create empty user-owned storage for profiles, tasks, habits, goals, transactions, and journal entries.
+- [ ] Add email/password sign-up and sign-in, profile name, sign-out, and protect private pages.
+- [ ] Replace fake dashboard values and implement saved task, habit, goal, transaction, and journal workflows.
+- [ ] Remove invented data from the remaining hubs; preserve the existing purple layout and requested footer.
+- [ ] Verify metadata, build, and the signed-in save/refresh flow; complete required package maintenance.
